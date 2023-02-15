@@ -3,11 +3,12 @@ import java.util.Map;
 
 public class TwoSumMeth2 {
     public static void main(String[] args) {
-        int[] arrNum = {2, 4, 5, 8, 3};
+        int[] nums = {2, 4, 5, 8, 3};
         int target = 7;
+        int [] result = twoSum2(nums, target);
 
-        System.out.println(twoSum1(arrNum, 7));
-        System.out.println(twoSum2(arrNum, 7));
+        System.out.println(twoSum1(nums, 7));
+        System.out.println(result[0]);
     }
 
     public static int[] twoSum1(int[] nums, int target) {
