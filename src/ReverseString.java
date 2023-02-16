@@ -1,7 +1,7 @@
 public class ReverseString {
     public static void main(String[] args) {
 
-        String str = "Well done";
+        String str = "1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1";
         System.out.println(reverseWithStringBuilder(str));
 
         System.out.println(reverseManually(str));
