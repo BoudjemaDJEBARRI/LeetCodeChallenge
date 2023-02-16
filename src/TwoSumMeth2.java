@@ -3,18 +3,33 @@ import java.util.Map;
 
 public class TwoSumMeth2 {
     public static void main(String[] args) {
-        int[] nums = {2, 4, 5, 8, 3};
-        int target = 7;
-        int [] result = twoSum2(nums, target);
+        int[] nums = new int[]{2, 4, 5, 8, 3, 5};
+        int target = 10;
 
-        System.out.println(twoSum1(nums, 7));
-        System.out.println(result[0]);
+        int[] result2 = twoSum2(nums, target);
+        System.out.println(result2[0] + " " + result2[1]);
+
+        int[] result1 = twoSum1(nums, target);
+        System.out.println(result1[0] + " " + result1[1]);
     }
 
+    //Meth 2
+    public static int[] twoSum2(int[] nums, int target) {
+        Map<Integer, Integer> map2 = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int diff2 = target - nums[i];
+            if (map2.containsKey(diff2)) {
+                return new int[]{i, map2.get(diff2)};
+            }
+            map2.put(nums[i], i);
+        }
+        return new int[] {-1, -1};
+    }
+
+
+    //Meth 3
     public static int[] twoSum1(int[] nums, int target) {
-
         Map<Integer, Integer> map1 = new HashMap<>();
-
         for (int i = 0; i < nums.length; i++) {
             Integer index1 = map1.get(nums[i]);
             if (index1 != null) {
@@ -24,23 +39,6 @@ public class TwoSumMeth2 {
         }
         throw new IllegalArgumentException("No Num");
     }
-      public static int[] twoSum2(int[] nums, int target) {
-
-        Map<Integer, Integer> map2 = new HashMap<>();
-
-        for (int i = 0; i < nums.length; i++) {
-            map2.put(nums[i], i);
-        }
-          for (int i = 0; i < nums.length; i++) {
-              int diff2 = target - nums[i];
-              if (map2.containsKey(diff2) && map2.get(diff2) != i);
-              return new int[] {map2.get(diff2)};
-          }
-
-          return nums;
-    }
-
-
 }
 
 /*
